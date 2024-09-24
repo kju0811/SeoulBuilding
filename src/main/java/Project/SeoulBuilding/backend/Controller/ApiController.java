@@ -36,13 +36,13 @@ public class ApiController {
     @PostMapping("/building")
     public String Building (@RequestParam("name") String name, Model model ) {
         String result = "";
-//454b526c4c6d656d313331544a57526b api 인증키
+
 
 
 /*
         try {
             String requestdata = name;
-            URL url = new URL("http://openapi.seoul.go.kr:8088/454b526c4c6d656d313331544a57526b/json/tbEntranceItem/1/1000/"
+            URL url = new URL(""
                     + requestdata);
             BufferedReader bf;
             bf = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8));
