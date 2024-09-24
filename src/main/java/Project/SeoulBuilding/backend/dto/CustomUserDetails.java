@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.dto;
+package Project.SeoulBuilding.backend.dto;
 
 import Project.SeoulBuilding.backend.Entity.UserEntity;
 import org.springframework.security.core.GrantedAuthority;

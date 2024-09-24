@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.repository;
+package Project.SeoulBuilding.backend.repository;
 
 import Project.SeoulBuilding.backend.Entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

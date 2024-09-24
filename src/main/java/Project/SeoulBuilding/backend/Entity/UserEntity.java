@@ -1,13 +1,14 @@
 package Project.SeoulBuilding.backend.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Setter
-@Getter
+@Data
 public class UserEntity {
 
     @Id

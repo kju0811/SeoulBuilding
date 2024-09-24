@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.dto;
+package Project.SeoulBuilding.backend.dto;
 
 import lombok.Getter;
 import lombok.Setter;

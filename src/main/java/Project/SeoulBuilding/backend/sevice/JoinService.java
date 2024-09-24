@@ -1,8 +1,8 @@
-package Project.SeoulBuilding.backend.login.sevice;
+package Project.SeoulBuilding.backend.sevice;
 
 import Project.SeoulBuilding.backend.Entity.UserEntity;
-import Project.SeoulBuilding.backend.login.dto.JoinDto;
-import Project.SeoulBuilding.backend.login.repository.UserRepository;
+import Project.SeoulBuilding.backend.dto.JoinDto;
+import Project.SeoulBuilding.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.Config;
+package Project.SeoulBuilding.backend.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

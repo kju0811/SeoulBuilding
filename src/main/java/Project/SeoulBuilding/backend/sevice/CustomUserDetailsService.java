@@ -1,8 +1,8 @@
-package Project.SeoulBuilding.backend.login.sevice;
+package Project.SeoulBuilding.backend.sevice;
 
 import Project.SeoulBuilding.backend.Entity.UserEntity;
-import Project.SeoulBuilding.backend.login.dto.CustomUserDetails;
-import Project.SeoulBuilding.backend.login.repository.UserRepository;
+import Project.SeoulBuilding.backend.dto.CustomUserDetails;
+import Project.SeoulBuilding.backend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

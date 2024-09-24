@@ -1,7 +1,7 @@
 package Project.SeoulBuilding.backend.Controller;
 
-import Project.SeoulBuilding.backend.login.dto.JoinDto;
-import Project.SeoulBuilding.backend.login.sevice.JoinService;
+import Project.SeoulBuilding.backend.dto.JoinDto;
+import Project.SeoulBuilding.backend.sevice.JoinService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
