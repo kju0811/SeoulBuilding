@@ -1,17 +1,17 @@
-package Project.SeoulBuilding.backend.login.Controller;
+package Project.SeoulBuilding.backend.Controller;
 
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
 
-@Controller
+@RestController
 public class MainController {
 
     @GetMapping("/")
@@ -31,6 +31,17 @@ public class MainController {
 
         //454b526c4c6d656d313331544a57526b api 인증키
         return "main";
+    }
+    @PostMapping("/api")
+    public String Building (@RequestParam("FCLT_NM") String name, Model model ) {
+        String result = "";
+
+        try {
+            String requestdata = name;
+            URL url = new URL("http://openapi.seoul.go.kr:8088/454b526c4c6d656d313331544a57526b/json/tbEntranceItem/1/20/"
+                    + requestdata);
+
+        }
     }
 }
 

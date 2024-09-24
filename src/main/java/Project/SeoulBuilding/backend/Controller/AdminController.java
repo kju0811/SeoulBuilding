@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.Controller;
+package Project.SeoulBuilding.backend.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
 package Project.SeoulBuilding.backend.login.dto;
 
-import Project.SeoulBuilding.backend.login.Entity.UserEntity;
+import Project.SeoulBuilding.backend.Entity.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

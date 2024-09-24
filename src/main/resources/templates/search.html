@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+serch page
+<form method="post" action="/api">
+  <!--/*@thymesVar id="FCLT_NM" type=""*/-->
+  <input type="text" name="location" th:value="${FCLT_NM}">
+  <input type="button" value="Search">
+</body>
+</html>

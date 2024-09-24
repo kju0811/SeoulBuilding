@@ -1,6 +1,6 @@
 package Project.SeoulBuilding.backend.login.sevice;
 
-import Project.SeoulBuilding.backend.login.Entity.UserEntity;
+import Project.SeoulBuilding.backend.Entity.UserEntity;
 import Project.SeoulBuilding.backend.login.dto.JoinDto;
 import Project.SeoulBuilding.backend.login.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.Entity;
+package Project.SeoulBuilding.backend.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

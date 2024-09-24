@@ -1,4 +1,4 @@
-package Project.SeoulBuilding.backend.login.Controller;
+package Project.SeoulBuilding.backend.Controller;
 
 import Project.SeoulBuilding.backend.login.dto.JoinDto;
 import Project.SeoulBuilding.backend.login.sevice.JoinService;
