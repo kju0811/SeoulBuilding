@@ -1,13 +1,12 @@
-package Project.SeoulBuilding.backend.sevice;
+package Project.SeoulBuilding.backend.Api.service;
 
-import Project.SeoulBuilding.backend.Entity.ApiEntity;
-import Project.SeoulBuilding.backend.repository.ApiRepository;
+import Project.SeoulBuilding.backend.Api.entity.ApiEntity;
+import Project.SeoulBuilding.backend.Api.repository.ApiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ApiService {
-
     private final ApiRepository apiRepository;
 
     @Autowired

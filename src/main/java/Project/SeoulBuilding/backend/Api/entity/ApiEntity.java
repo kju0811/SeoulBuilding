@@ -1,12 +1,9 @@
-package Project.SeoulBuilding.backend.Entity;
+package Project.SeoulBuilding.backend.Api.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Bean;
-
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,12 +13,10 @@ import java.time.LocalDateTime;
 public class ApiEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true)
-    private long ID;//건물 아이디
+    private String ID;//건물 아이디
 
-    private long NEW_ADDR_ID;//새주소 아이디
-    private long FCLT_ID;//시설아이디
+    private String NEW_ADDR_ID;//새주소 아이디
+    private String FCLT_ID;//시설아이디
     private String FCLT_NM;//시설명
     private double LAT;//위도
     private double LOT;//경도
@@ -31,5 +26,5 @@ public class ApiEntity {
     private String LOTNO_ADDR;//소재 지번주소
     private String ETC;//기타
     private String NTN_BRNCH_NO;// 국가지점번호
-    private LocalDateTime DATA_CRTR_DD;//데이터기준 일자
- }
+
+}
