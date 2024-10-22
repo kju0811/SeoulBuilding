@@ -27,10 +27,14 @@ public class UserPrincipal implements UserDetails {
         this.authorities = Collections.singletonList(new SimpleGrantedAuthority(user.getRole().getKey()));
     }
 
+
     //userdetails 메서드 구현
+    public Long getId() {
+        return user.getId();
+    }
     @Override
     public String getPassword() {
-        return null;
+        return user.getPassword();
     }
 
     @Override

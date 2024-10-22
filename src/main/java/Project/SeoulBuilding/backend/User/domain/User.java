@@ -1,8 +1,13 @@
 package Project.SeoulBuilding.backend.User.domain;
 
 import Project.SeoulBuilding.backend.User.BaseTime;
+import Project.SeoulBuilding.backend.User.dto.UserRequestDTO;
+import Project.SeoulBuilding.backend.auth.entity.Auth;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)
@@ -40,6 +45,15 @@ public class User extends BaseTime {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Auth auth;
+
+    public void update(UserRequestDTO responseDTO) {
+        @NotNull(message = "이메일은 필수값입니다.")
+        @Email(message = "이메일의 형식이 올바르지 않습니다")
+        String email;
+        @NotBlank(message = "이름은 필수값입니다.")
+        String username;
+    }
+
 
     /*
     권한 열거형 클래스로 지정

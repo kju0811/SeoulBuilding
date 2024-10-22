@@ -1,6 +1,7 @@
-package Project.SeoulBuilding.backend.User.domain;
+package Project.SeoulBuilding.backend.auth.entity;
 
 import Project.SeoulBuilding.backend.User.BaseTime;
+import Project.SeoulBuilding.backend.User.domain.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,7 +28,7 @@ public class Auth extends BaseTime {
     private String refreshtoken;
 
     @Column(name = "userId",nullable = false)
-    private Long userId;
+    private String tokentype;
 
     @Column(name = "expiresAt", nullable = false, updatable = false)
     private LocalDateTime expiresAt;
@@ -35,4 +36,11 @@ public class Auth extends BaseTime {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    public void updateAccessToken(String accesstoken) {
+    }
+
+    public void updateRefreshToken(String refreshtoken) {
+        
+    }
 }

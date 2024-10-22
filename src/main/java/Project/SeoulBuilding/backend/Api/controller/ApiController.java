@@ -44,9 +44,9 @@ public class ApiController {
     public String Building() {
         String result = "";
         try {
-            for (int pg = 1; pg < 722; pg++) {// 3607개의 데이터를 /5로 분산
+            for (int pg = 1; pg < 36; pg++) {// 3607개의 데이터를 /5로 분산
                 URL url = new URL(openapiUrl
-                         + serviceKey + "/json/" + "tbEntranceItem/" +pg+ "/721" );
+                         + serviceKey + "/json/" + "tbEntranceItem/" +pg+ "/100" );
 
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
