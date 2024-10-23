@@ -73,7 +73,7 @@ public class AuthService {
     public String refresh(String refreshtoken, boolean isAccessToken) {
         //리프레시 토큰의 유효 기간을 확인하고, 액세스 토큰을 업데이트한 후 반환
         if (this.jwtGenerator.validateToken(refreshtoken,isAccessToken)) {
-            Auth auth = this.authRepository.findByRefreshToken(refreshtoken).orElseThrow(()->
+            Auth auth = this.authRepository.findByRefreshtoken(refreshtoken).orElseThrow(()->
                     new IllegalArgumentException("해당 REFRESH_TOKEN을 찾을 수 없습니다 : " + refreshtoken));
 
             String newAccessToken = this.jwtGenerator.generateAccessToken(

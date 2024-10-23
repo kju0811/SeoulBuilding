@@ -34,8 +34,8 @@ public class AuthRestController {
      토큰갱신 API
      **/
     @GetMapping("/api/refresh")
-    public ResponseEntity<?> refreshToken(@RequestHeader("REFRESH_TOKEN") String refreshToken, boolean isAccesstoken) {
-        String newAccesstoken = this.authService.refresh(refreshToken, isAccesstoken);
+    public ResponseEntity<?> refreshToken(@RequestHeader("REFRESH_TOKEN") String refreshtoken, boolean isAccesstoken) {
+        String newAccesstoken = this.authService.refresh(refreshtoken, isAccesstoken);
         return ResponseEntity.status(HttpStatus.OK).body(newAccesstoken);
     }
 }

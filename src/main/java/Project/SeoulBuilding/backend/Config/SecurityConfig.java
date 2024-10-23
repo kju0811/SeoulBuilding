@@ -2,11 +2,9 @@ package Project.SeoulBuilding.backend.Config;
 
 import Project.SeoulBuilding.backend.jwt.jwtclass.JwtTokenFilter;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -41,8 +39,7 @@ public class SecurityConfig {
                 .sessionManagement( session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .addFilterBefore(this.jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
+                .addFilterBefore(this.jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 }
