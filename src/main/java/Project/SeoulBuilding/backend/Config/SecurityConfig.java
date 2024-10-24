@@ -26,14 +26,14 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
-
         http
                 .csrf(csrf -> csrf.disable())
                 .formLogin(formLogin -> formLogin.disable())
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/","/api/login","/joinProc","/api/signup").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/user/**","/api/building").hasAnyRole("ADMIN","USER")
+                        .requestMatchers("/api/user/**","/api/building/**").authenticated()
+                        .requestMatchers("/api/user/update/**","/api/user/find/**","/api/user/delete/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement( session -> session

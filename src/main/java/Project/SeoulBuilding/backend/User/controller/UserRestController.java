@@ -18,7 +18,7 @@ public class UserRestController {
     private final JwtGenerator jwtGenerator;
 
     //회원정보조회 API
-    @GetMapping ("/find")
+    @GetMapping ("/api/find")
     public ResponseEntity<?> findUser(@RequestHeader("Authorization") String accesstoken) {
         try {
             if(accesstoken != null && accesstoken.startsWith("Bearer ")) {
@@ -36,7 +36,7 @@ public class UserRestController {
     }
 
     //회원정보수정 API
-    @PutMapping("/update")
+    @PutMapping("/api/update")
     public ResponseEntity<?> update(@RequestHeader("Authorization") String accesstoken, @RequestBody UserRequestDTO userRequestDTO) {
         try{
             if(accesstoken != null && accesstoken.startsWith("Bearer ")) {
@@ -55,7 +55,7 @@ public class UserRestController {
     }
 
     //회원정보 삭제 API
-    @DeleteMapping("/delete")
+    @DeleteMapping("/api/delete")
     public ResponseEntity<?> delete(@RequestHeader("Authorization") String accesstoken) {
         try {
             if (accesstoken != null && accesstoken.startsWith("Bearer ")) {
