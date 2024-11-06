@@ -1,29 +1,32 @@
 import {useState} from "react";
-import {signup} from "../Auth/AuthAPI";
+import {login} from "../api/AuthAPI.jsx";
 
-export default function SignupPage() {
-    const [values,setValues] = useState({
-        username : "",
-        password : "",
+export default function SignInPage() {
+    const [values, setValues] = useState({
+        username: "",
+        password: "",
     });
-
     const handleChange = async (e) => {
         setValues({...values,
-        [e.target.id]: e.target.value
+            [e.target.id]: e.target.value,
         });
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await signup(values);
-            window.location.href= "/api/login";
-        } catch (error){
+        try{
+            const response = await login(values);
+            localStorage.clear();
+            localStorage.setItem('tokentype', response.tokentype);
+            localStorage.setItem('accesstoken', response.accesstoken);
+            localStorage.setItem('refreshtoken', response.refreshtoken);
+
+            window.location.href = `/`;
+        }catch(error) {
             console.log(error);
         }
-    };
-
+    }
     return (
         <div className="d-flex justify-content-center" style={{minHeight: "100vh"}}>
             <div className="align-self-center">
@@ -39,7 +42,7 @@ export default function SignupPage() {
                                value={values.password}/>
                     </div>
                     <div className="form-group" style={{minWidth: "25vw"}}>
-                        <button type="submit" style={{width: "100%"}}>회원가입</button>
+                        <button type="submit" style={{width: "100%"}}>로그인</button>
                     </div>
                 </form>
             </div>
