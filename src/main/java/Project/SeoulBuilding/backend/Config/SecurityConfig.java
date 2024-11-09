@@ -33,7 +33,7 @@ public class SecurityConfig {
                         .requestMatchers("/","/api/login","/joinProc","/api/signup").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/user/**","/api/building/**").authenticated()
-                        .requestMatchers("/api/user/update/**","/api/user/find/**","/api/user/delete/**").authenticated()
+                        //.requestMatchers("/api/user/update/**","/api/user/find/**","/api/user/delete/**").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement( session -> session
