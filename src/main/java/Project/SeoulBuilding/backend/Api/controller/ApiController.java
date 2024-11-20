@@ -34,55 +34,8 @@ public class ApiController {
         this.apiRepository = apiRepository;
     }
 
-    @Value("${serviceKey}")
-    private String serviceKey;
-
-    @Value("${openapiUrl}")
-    private String openapiUrl;
-
     @GetMapping("/building")
-    public String Building() {
-        String result = "";
-        try {
-            for (int pg = 1; pg < 36; pg++) {// 3607개의 데이터를 /5로 분산
-                URL url = new URL(openapiUrl
-                         + serviceKey + "/json/" + "tbEntranceItem/" +pg+ "/100" );
-
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.setRequestProperty("Content-type", "application/json");
-
-                BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-                result = bf.readLine();
-
-                JSONParser jsonParser = new JSONParser();
-                JSONObject jsonObject = (JSONObject) jsonParser.parse(result);
-                JSONObject tbEntranceItem = (JSONObject) jsonObject.get("tbEntranceItem");
-                JSONArray row = (JSONArray) tbEntranceItem.get("row");
-
-                for (int i = 0; i < row.size(); i++) {
-                    JSONObject data = (JSONObject) row.get(i);
-
-                    ApiEntity apidata = new ApiEntity(
-                            (String) data.get("ID"),
-                            (String) data.get("NEW_ADDR_ID"),
-                            (String) data.get("FCLT_ID"),
-                            (String) data.get("FCLT_NM"),
-                            (double) data.get("LAT"),
-                            (double) data.get("LOT"),
-                            (String) data.get("BLDN_CLNY_YN"),
-                            (String) data.get("FCLT_USG_SE"),
-                            (String) data.get("RDN_ADDR"),
-                            (String) data.get("LOTNO_ADDR"),
-                            (String) data.get("ETC"),
-                            (String) data.get("NTN_BRNCH_NO")
-                    );
-                    apiService.save(apidata);
-                }
-            }
-            return "api";
-        } catch (Exception e) {
-            log.trace(e.getMessage());
-        } return "error";
+    public String Building(ApiEntity apiEntity) {
+        return apiService.Building(apiEntity);
     }
 }
